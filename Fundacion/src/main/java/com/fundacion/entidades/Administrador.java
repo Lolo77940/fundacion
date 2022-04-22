@@ -7,8 +7,6 @@ import javax.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-
-
 @Entity
 @Table(name = "administarador")
 @Data

@@ -14,20 +14,23 @@ import lombok.Data;
 @Table(name = "programa")
 @Data
 public class Programa {
-	
+
 	@Id
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
-	@Column (unique = true ,name = "id_programa")
+	@Column(unique = true, name = "id_programa")
 	private String idPrograma;
-	
-	@Column (name = "nombre") 
+
+	@Column(name = "nombre")
 	private String nombre;
-	
-	@Column (name = "descripcion") 
+
+	@Column(name = "apellido")
+	protected String apellido;
+
+	@Column(name = "descripcion")
 	private String descripcion;
-	
-	@Column (name = "img") 
+
+	@Column(name = "img")
 	private String img;
-	
+
 }

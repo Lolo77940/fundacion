@@ -16,12 +16,6 @@ public class Visitante extends Usuario {
 	@Column(name = "telefono")
 	private long telefono;
 
-	@Column(unique = true, name = "dni")
-	private String dni;
-
-	@Column(name = "apellido")
-	private String apellido;
-
 	@Column(name = "provincia")
 	private String provincia;
 

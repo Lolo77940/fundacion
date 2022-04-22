@@ -31,9 +31,12 @@ public abstract class Usuario {
 
 	@Column(name = "nombre")
 	protected String nombre;
-	
+
 	@Column(name = "apellido")
 	protected String apellido;
+
+	@Column(unique = true, name = "dni")
+	private String dni;
 
 	@Column(name = "estado")
 	protected Boolean estado = true;
