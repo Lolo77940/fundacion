@@ -5,13 +5,17 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Entity
-@Data 
-@Table(name ="docente")
-public class Docente extends Usuario{
+@Table(name = "docente")
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class Docente extends Usuario {
+
 	@Column(name = "username")
 	private String username;
+
 	@Column(name = "password")
 	private String password;
 }

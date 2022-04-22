@@ -13,19 +13,32 @@ import org.hibernate.annotations.GenericGenerator;
 
 import com.fundacion.enumeraciones.Rol;
 
+import lombok.Data;
+
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@Data
 public abstract class Usuario {
+
 	@Id
 	@GeneratedValue(generator = "uuid")
-	@GenericGenerator(name = "uuid", strategy = "uuid2")	
+	@GenericGenerator(name = "uuid", strategy = "uuid2")
+	@Column(unique = true, name = "id_usuario")
 	protected String idUsuario;
-	@Column(unique = true,name = "email")
-	protected String email;	
+
+	@Column(unique = true, name = "email")
+	protected String email;
+
 	@Column(name = "nombre")
 	protected String nombre;
+	
+	@Column(name = "apellido")
+	protected String apellido;
+
 	@Column(name = "estado")
-	protected Boolean estado;
+	protected Boolean estado = true;
+
 	@Enumerated(EnumType.STRING)
 	protected Rol rol;
+
 }

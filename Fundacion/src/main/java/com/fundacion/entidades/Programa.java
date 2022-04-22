@@ -8,8 +8,11 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import lombok.Data;
+
 @Entity
 @Table(name = "programa")
+@Data
 public class Programa {
 	
 	@Id
@@ -17,10 +20,13 @@ public class Programa {
 	@GenericGenerator(name = "uuid", strategy = "uuid2")
 	@Column (unique = true ,name = "id_programa")
 	private String idPrograma;
+	
 	@Column (name = "nombre") 
 	private String nombre;
+	
 	@Column (name = "descripcion") 
 	private String descripcion;
+	
 	@Column (name = "img") 
 	private String img;
 	
